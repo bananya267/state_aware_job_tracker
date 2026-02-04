@@ -1,0 +1,51 @@
+{
+  "scenario": {
+    "name": "Smart_Job_Tracker_v1",
+    "description": "Architected flow for extracting, sanitizing, and tracking job applications.",
+    "flow": [
+      {
+        "id": 1,
+        "module": "google-email:watch",
+        "label": "Ingest: Daily Batch",
+        "filter": "label:JobUpdates AND newer_than:1d"
+      },
+      {
+        "id": 2,
+        "module": "text-parser:replace",
+        "label": "Privacy: Redact Emails",
+        "pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+        "replacement": "[EMAIL_REDACTED]"
+      },
+      {
+        "id": 3,
+        "module": "google-gemini:generate",
+        "label": "AI: Intent Analysis",
+        "parameters": {
+          "model": "gemini-1.5-flash",
+          "temperature": 0.1,
+          "response_format": "JSON"
+        }
+      },
+      {
+        "id": 4,
+        "module": "notion:search",
+        "label": "State: Check Existence",
+        "query": "Company == {{3.company}} AND Role == {{3.role}}"
+      },
+      {
+        "id": 5,
+        "module": "router:flow_control",
+        "routes": [
+          {
+            "label": "Route A: Create New",
+            "condition": "{{4.total_results}} == 0"
+          },
+          {
+            "label": "Route B: Update Existing",
+            "condition": "{{4.total_results}} > 0"
+          }
+        ]
+      }
+    ]
+  }
+}
