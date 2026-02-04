@@ -60,4 +60,4 @@ Currently architecting the "Pull" layer:
    * Set GMAIL_LABEL to your specific job folder.
    * Set NOTION_DB_ID to your tracking database.
    * Add GEMINI_API_KEY to your Make keychain (Do not hardcode).
-4. Review Policies: See GOVERNANCE.md for compliance details.
+4. Review Policies: See [GOVERNANCE.md](./docs/GOVERNANCE.md) for compliance details.
