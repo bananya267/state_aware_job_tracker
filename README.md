@@ -48,8 +48,10 @@ graph TD
 Currently architecting the "Pull" layer:
 
 1. **Passive Monitoring:** Scrapers for target company career pages.
-2. **Semantic Matching:** Vector-based comparison of Job Descriptions vs. Resume.
-3. **Command Center:** A "Detected Opportunities" board for Human-in-the-Loop approval.
+2. **JD Enrichment:** Automated scraping and LLM-summarization of Job Descriptions to provide "Cheat Sheets" for active applications.
+3. **The "Pivot" Dashboard:** Diagnostic visualization for data-backed course correction (identifying Funnel Latency and Channel ROI).
+4. **Semantic Matching:** Vector-based comparison of Job Descriptions vs. Resume.
+5. **Command Center:** A "Detected Opportunities" board for Human-in-the-Loop approval.
 
 ## 🛠️ Installation & Setup
 1. Clone the Repo: git clone https://github.com/bananya267/state_aware_job_tracker.git
