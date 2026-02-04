@@ -40,9 +40,9 @@ graph TD
 ```
 
 ## 🌟 Key Features
-* **Zero-Trust Privacy: ** All PII (Emails, Phone Numbers) is redacted locally before reaching the AI model.
-* **Idempotency: ** "Search-Before-Write" logic prevents duplicate database entries.
-* **Explainable AI (XAI): ** Every status change logs a "Reasoning" field, auditing why the AI made the decision.
+* **Zero-Trust Privacy:** All PII (Emails, Phone Numbers) is redacted locally before reaching the AI model.
+* **Idempotency:** "Search-Before-Write" logic prevents duplicate database entries.
+* **Explainable AI (XAI):** Every status change logs a "Reasoning" field, auditing why the AI made the decision.
 
 ## 🚀 Roadmap (Phase 2: Market Intelligence)
 Currently architecting the "Pull" layer:
