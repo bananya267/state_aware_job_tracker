@@ -37,3 +37,25 @@ graph TD
     F -->|Score > 0.8| G[Action: Update Status + Log Audit]
     F -->|Score < 0.8| H[Action: HITL Escalation]
     end
+```
+
+## 🌟 Key Features
+* **Zero-Trust Privacy: ** All PII (Emails, Phone Numbers) is redacted locally before reaching the AI model.
+* **Idempotency: ** "Search-Before-Write" logic prevents duplicate database entries.
+* **Explainable AI (XAI): ** Every status change logs a "Reasoning" field, auditing why the AI made the decision.
+
+## 🚀 Roadmap (Phase 2: Market Intelligence)
+Currently architecting the "Pull" layer:
+
+1. **Passive Monitoring:** Scrapers for target company career pages.
+2. **Semantic Matching:** Vector-based comparison of Job Descriptions vs. Resume.
+3. **Command Center:** A "Detected Opportunities" board for Human-in-the-Loop approval.
+
+## 🛠️ Installation & Setup
+1. Clone the Repo: git clone https://github.com/bananya267/state_aware_job_tracker.git
+2. Import Blueprint: Upload blueprints/job-tracker-v1.json to your Make.com account.
+3. Configure Environment:
+   * Set GMAIL_LABEL to your specific job folder.
+   * Set NOTION_DB_ID to your tracking database.
+   * Add GEMINI_API_KEY to your Make keychain (Do not hardcode).
+4. Review Policies: See GOVERNANCE.md for compliance details.
